@@ -9,6 +9,20 @@ jsrsasign (END OF SUPPORT)
 
 jsrsasign [TOP](https://kjur.github.io/jsrsasign/) | [github](https://github.com/kjur/jsrsasign) | [Wiki](https://github.com/kjur/jsrsasign/wiki) | [DOWNLOADS](https://github.com/kjur/jsrsasign/releases) | [TUTORIALS](https://github.com/kjur/jsrsasign/wiki#programming-tutorial) | [API REFERENCE](https://kjur.github.io/jsrsasign/api/) | [Online Tool](https://github.com/kjur/jsrsasign/wiki/jsrsasign-Online-Tools) | [DEMO](https://github.com/kjur/jsrsasign/wiki/jsrsasign-Demo) | [NODE TOOL](https://github.com/kjur/jsrsasign/wiki/Sample-Node-Tool-List) | [AddOn](https://github.com/kjur/jsrsasign/wiki/jsrsasign-Add-On)
 
+> **This is the `unabandoned` fork.** Upstream `jsrsasign` reached end of support on
+> 2026-08-14 with 11.1.5, and every version on npm is deprecated ("This package is no
+> longer maintained."). This fork continues it as
+> [`@unabandoned/jsrsasign`](https://www.npmjs.com/package/@unabandoned/jsrsasign): the
+> same `lib/jsrsasign.js` entry and the same API, with security fixes landed here.
+> To switch without touching your imports, alias it:
+>
+> ```
+> npm install jsrsasign@npm:@unabandoned/jsrsasign
+> ```
+>
+> Report problems with the fork [here](https://github.com/unabandoned/jsrsasign/issues),
+> not upstream.
+
 The 'jsrsasign' (RSA-Sign JavaScript Library) is an opensource free cryptography library supporting RSA/RSAPSS/ECDSA/DSA signing/validation, ASN.1, PKCS#1/5/8 private/public key, X.509 certificate, CRL, OCSP, CMS SignedData, TimeStamp, CAdES JSON Web Signature/Token/Key in pure JavaScript.
 
 Public page is https://kjur.github.io/jsrsasign .

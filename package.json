@@ -1,0 +1,21 @@
+{
+  "name": "jsrsasign-repo",
+  "private": true,
+  "description": "Repository shell for @unabandoned/jsrsasign. The published package is the npm/ workspace.",
+  "workspaces": [
+    "npm"
+  ],
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks || true",
+    "test": "npm test -w npm && node --test \"scripts/*.test.cjs\""
+  },
+  "devDependencies": {
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unabandoned/jsrsasign.git"
+  }
+}

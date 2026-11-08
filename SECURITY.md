@@ -1,3 +1,11 @@
 # Security Policy
 
-The jsrsasign library reached end of support on August 14, 2026. No further updates, including security updates, will be provided after that date.
+## Supported Versions
+Only the latest major version is supported at any given time.
+
+## Reporting a Vulnerability
+
+Please report vulnerabilities privately — do not open a public issue for a
+security bug. Open a draft advisory on this repository via its
+**Security → Advisories → Report a vulnerability** tab, which keeps the report
+private while we coordinate a fix.

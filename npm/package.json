@@ -1,41 +1,75 @@
 {
-  "name": "jsrsasign",
+  "name": "@unabandoned/jsrsasign",
   "version": "11.1.5",
   "description": "opensource free pure JavaScript cryptographic library supports RSA/RSAPSS/ECDSA/DSA signing/validation, ASN.1, PKCS#1/5/8 private/public key, X.509 certificate, CRL, OCSP, CMS SignedData, TimeStamp and CAdES and JSON Web Signature(JWS)/Token(JWT)/Key(JWK).",
   "main": "lib/jsrsasign.js",
+  "files": [
+    "lib",
+    "test",
+    "Makefile"
+  ],
   "scripts": {
-    "test": "mocha"
+    "test": "node --require ../scripts/node-test-globals.cjs --test \"test/*.js\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kjur/jsrsasign.git"
+    "url": "git+https://github.com/unabandoned/jsrsasign.git",
+    "directory": "npm"
   },
   "keywords": [
-    "crypto", "cryptography", "Cipher",
-    "RSA", "ECDSA", "DSA", "RSAPSS",
-    "PKCS#1", "PKCS#5", "PKCS#8", "private key", "public key",
-    "CSR", "PKCS#10",
+    "crypto",
+    "cryptography",
+    "Cipher",
+    "RSA",
+    "ECDSA",
+    "DSA",
+    "RSAPSS",
+    "PKCS#1",
+    "PKCS#5",
+    "PKCS#8",
+    "private key",
+    "public key",
+    "CSR",
+    "PKCS#10",
     "hash function",
     "HMac",
     "ASN.1",
-    "certificate", "X.509", "CRL", "OCSP",
-    "RFC 3161", "Digital Timestamp", "Timestamp", "Time Stamp Token",
-    "CMS", "Cryptgraphic Message Syntax", "PKCS#7",   
-    "Signature", "Digital Signature", "signing",
+    "certificate",
+    "X.509",
+    "CRL",
+    "OCSP",
+    "RFC 3161",
+    "Digital Timestamp",
+    "Timestamp",
+    "Time Stamp Token",
+    "CMS",
+    "Cryptgraphic Message Syntax",
+    "PKCS#7",
+    "Signature",
+    "Digital Signature",
+    "signing",
     "Message Digest",
-    "JSON Web Token", "JWT",
-    "JSON Web Signature", "JWS",
-    "JSON Web Key", "JWK", 
-    "JOSE", "JWA"
+    "JSON Web Token",
+    "JWT",
+    "JSON Web Signature",
+    "JWS",
+    "JSON Web Key",
+    "JWK",
+    "JOSE",
+    "JWA"
   ],
   "author": "Kenji Urushima",
-  "homepage": "http://kjur.github.io/jsrsasign/",
+  "homepage": "https://github.com/unabandoned/jsrsasign#readme",
   "license": "MIT",
+  "engines": {
+    "node": ">=22.12"
+  },
   "bugs": {
-    "url": "https://github.com/kjur/jsrsasign/issues"
+    "url": "https://github.com/unabandoned/jsrsasign/issues"
   },
   "dependencies": {},
-  "devDependencies": {
-      "mocha": "*"
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
