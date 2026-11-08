@@ -742,6 +742,12 @@ KJUR.crypto.ECDSA.parseSigHexInHexRS = function(sigHex) {
     var hR = _getV(sigHex, iTLV1);
     var hS = _getV(sigHex, iTLV2);
 
+    // 5. r and s shall be positive. A DER INTEGER whose first value octet
+    //    has the high bit set is negative (X.690 8.3.3).
+    if (parseInt(hR.substr(0, 2), 16) >= 0x80 ||
+	parseInt(hS.substr(0, 2), 16) >= 0x80)
+	throw new Error("negative ASN.1 integer in signature");
+
     return {'r': hR, 's': hS};
 };
 

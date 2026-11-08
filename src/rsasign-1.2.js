@@ -279,9 +279,16 @@ RSAKey.prototype.verifyWithMessageHash = function(sHashHex, hSig) {
     var biSig = parseBigInt(hSig, 16);
 
     if (biSig.bitLength() > this.n.bitLength()) return 0;
+    // signature representative shall be less than n (RFC 8017 5.2.2)
+    if (biSig.compareTo(this.n) >= 0) return false;
 
     var biDecryptedSig = this.doPublic(biSig);
-    var hDigestInfo = biDecryptedSig.toString(16).replace(/^1f+00/, '');
+    var hDecryptedSig = biDecryptedSig.toString(16);
+    // EM = 0x00 || 0x01 || PS || 0x00 || T shall be as long as the modulus
+    // (RFC 8017 9.2). toString(16) drops the leading "00" and the "0" of "01".
+    if (hDecryptedSig.length + 3 != Math.ceil(this.n.bitLength() / 8) * 2)
+	return false;
+    var hDigestInfo = hDecryptedSig.replace(/^1f+00/, '');
     var digestInfoAry = _rsasign_getAlgNameAndHashFromHexDisgestInfo(hDigestInfo);
   
     if (digestInfoAry.length == 0) return false;
