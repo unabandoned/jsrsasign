@@ -1,0 +1,33 @@
+schema: 1
+
+package: "@unabandoned/jsrsasign"
+
+upstream:
+  repo: kjur/jsrsasign
+  reason: "end of support announced 2026-08-14 with 11.1.5; every npm version is deprecated (\"This package is no longer maintained.\") and upstream SECURITY.md says no further updates, including security updates"
+
+summary: >-
+  Pure JavaScript cryptography library: RSA/RSA-PSS/ECDSA/DSA signing and
+  verification, ASN.1 parsing and DER encoding, PKCS#1/5/8 keys, X.509
+  certificates, CRLs and CSRs, OCSP, CMS SignedData, RFC 3161 timestamps, and
+  JWS/JWT/JWK.
+
+why-forked: >-
+  CyberChef's X.509/CRL/CSR parsing, PEM/JWK conversion, ASN.1 and OID
+  operations, ECDSA sign/verify/convert, JWT and SM2 all import it at runtime.
+  Upstream is end-of-life and deprecated on npm, so security reports against
+  it (open issues already include a signature-verification weakness) would
+  never be fixed. It has no runtime dependencies; forked so a maintained,
+  non-deprecated build exists to take fixes. The npm package is the npm/
+  subdirectory, published byte-for-byte as upstream built it.
+
+used-by:
+  - consumer: TheTechNetwork/CyberChef
+    purpose: >-
+      X.509/CRL/CSR parsing, PEM<->JWK, Hex<->PEM, ASN.1 and OID operations,
+      ECDSA sign/verify/conversion, JWT sign/verify/decode and SM2 (17 source
+      files, aliased as jsrsasign)
+
+status: active
+
+tags: [crypto, rsa, ecdsa, dsa, asn1, x509, jwt, jws, jwk, pkcs]
